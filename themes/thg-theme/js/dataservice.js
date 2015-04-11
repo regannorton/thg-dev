@@ -76,6 +76,7 @@ function ($, PersistentStorage, Constants, Gibberish)
 			error: function (jqXHR, exception)
 			{
 				console.log ("error: " + jqXHR.status);
+				console.log ('jq: ',jqXHR);
 				module.saveUserData ("", "");
 				if (onError) onError (jqXHR, exception);
 			}

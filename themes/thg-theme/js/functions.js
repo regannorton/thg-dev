@@ -12,7 +12,6 @@ define(['jquery','core/theme-app','core/theme-tpl-tags',
 	first_run = true;
 	refresh_after_logout = false;
 	user_data = {}
-	user_categories = [];
 	
 	// HOLDS ALL POST DATA
 	// SET FROM archive.html
@@ -189,10 +188,9 @@ define(['jquery','core/theme-app','core/theme-tpl-tags',
 	} );
 	
 	App.filter( 'web-service-params', function( web_service_params, web_service_name ){ 
-		var categories = user_categories;
 		var chosen = filter_categories;//PersistentStorage.get( 'categories', 'chosen' );
 		console.log('chosen: '+chosen);
-		web_service_params.user_cats = categories;
+	
 		web_service_params.chosen_categories = chosen; 
 		//Array of chosen categories slugs
 		console.log('web_service_params: ',web_service_params);
@@ -217,28 +215,9 @@ define(['jquery','core/theme-app','core/theme-tpl-tags',
 				var access_token_key = 'access_token';
 				userKey = PersistentStorage.get (credentials_group, access_token_key);
 				user_data = PersistentStorage.get ('credentials', 'user_data');
-				console.log('user: ',user_data.ID);
-				$.ajax ({
-					url: '/regan.php',
-					type: 'GET',
-					dataType: 'json',
-					data: {id:user_data.ID},
-					success: function (data)
-					{
-						console.log ("success: " , data);
-						$.each(data,function(k,v){
-							$.each(v,function(k1,v1){
-								user_categories.push(v1);
-							});
-						});
-						console.log ("success... load next page");
-						window.location = '#component-latest';
-					},
-					error: function (jqXHR, exception)
-					{
-						console.log ("error: " + jqXHR.status);
-					}
-				});
+				console.log('user: ',user_data);
+				console.log ("success... load next page");
+				window.location = '#component-latest';
 			},
 			function ()
 			{

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns       = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = ""
-        versionCode = ""
-        version     = "" >
+        id          = "1"
+        versionCode = "1"
+        version     = "0.1" >
 
-	<name></name>
+	<name>Test App</name>
 
-	<description></description>
+	<description>Test App</description>
 
-	<author href="" email=""></author>
+	<author href="http://thg.hfnelson.com" email="regan@hfnelson.com">Regan</author>
 
 	<gap:platform name="ios" />
 	
@@ -18,8 +18,44 @@
 	
 	<!-- Add Icon, Splash screen and any PhoneGap plugin declaration here -->
 
-	<gap:plugin name="org.apache.cordova.inappbrowser" />
+	<access origin="*" />
+	<!-- Icons iOS 7.0+ -->
+	<icon src="icons/icon.png" width="57" height="57" />
+	<icon src="icons/icon@2x.png" width="114" height="114" />
+	<!-- iPad -->
+	<icon src="icons/icon-76.png" width="76" height="76" />
+	<icon src="icons/icon-76@2x.png" width="152" height="152" />
+	<!-- iPad -->
+	<icon src="icons/icon-72.png" width="72" height="72" />
+	 <icon src="icons/icon-72@2x.png" width="144" height="144" />
+	<!-- iPad Spotlight and Settings Icon -->
+	<icon src="icons/icon-50.png" width="50" height="50" />
+	<icon src="icons/icon-50@2x.png" width="100" height="100" />
+	
+	<!-- Splashscreens -->
+	<!-- iPhone 5 / iPod Touch (5th Generation) -->
+	<gap:splash src="splashscreens/iphone5Portrait.png" gap:platform="ios" width="640" height="1136" />
+	
+	<!-- iPhone 6 -->
+	<gap:splash src="splashscreens/iphone6Portrait.png" gap:platform="ios" width="750" height="1334" />
+	<gap:splash src="splashscreens/iphone6PlusPortrait.png" gap:platform="ios" width="1242" height="2208" />
+	
+	<!-- iPad -->
+	<gap:splash src="splashscreens/ipadPortrait-1x.png" gap:platform="ios" width="768" height="1024" />
+	<gap:splash src="splashscreens/ipadLandscape-1x.png" gap:platform="ios" width="1024" height="768" />
+	
+	<!-- Retina iPad -->
+	<gap:splash src="splashscreens/ipadPortrait-2x.png" gap:platform="ios" width="1536" height="2048" />
+	<gap:splash src="splashscreens/ipadLandscape-2x.png" gap:platform="ios" width="2048" height="1536" />
+	
+	<preference name="SplashScreenDelay" value="10000" />
+
+	<gap:plugin name="org.apache.cordova.inappbrowser" version="0.3.3" />
 	<gap:plugin name="org.apache.cordova.network-information" />
 	<gap:plugin name="com.phonegap.plugin.statusbar" />
+	<gap:plugin name="org.apache.cordova.file" />
+	<gap:plugin name="org.apache.cordova.file-transfer" />
+	<gap:plugin name="io.github.pwlin.cordova.plugins.fileopener2" version="1.0.11" />
+	<gap:plugin name="nl.x-services.plugins.socialsharing" />
 
 </widget>
