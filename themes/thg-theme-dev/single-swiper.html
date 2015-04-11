@@ -1,0 +1,76 @@
+<div class="swiper-container">
+        <div class="swiper-wrapper">
+        
+        <% _.each( section_data, function( post ){ %>
+            <div class="swiper-slide" data-hash="#single/posts/<%= post.id %>">
+                <div class="image_banner">
+                    <% if( post.thumbnail.src && post.thumbnail.src.length ){ %>
+                        <img width="2048" height="443" src="<%= post.thumbnail.src %>" class="attachment-post-thumbnail wp-post-image" alt="sample" title="" style="">
+                    <% } else { %>
+                        <img width="2048" height="443" src="http://thg.hfnelson.com/wp-content/uploads/2015/02/sample-2048x443.jpg" class="attachment-post-thumbnail wp-post-image" alt="sample" title="" style="">	
+                    <% } %>
+                </div>
+                <div class="container copy <%= font_size %>">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="date"><%= TemplateTags.formatDate(post.date,'m/d/Y') %></div>
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <span class="category_name"><%= post.categories %></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 post_title">
+                            <h1><%= post.title %></h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <span class="source"><%= post.thg_curator_article_source %></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 post_content">
+                            <%= post.content %>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 text-right">
+                            <a href="#" class="print_btn">Print</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+							<% if( post.comments && post.comments.length > 1 ) { %>
+                                <ul>
+                                    <% _.each( post.comments, function( comment ) { %>
+                                        <li>
+                                            <strong><%= comment.comment_author %></strong>
+                                            <p><%= comment.comment_content %></p>
+                                        </li>
+                                    <% } ); %>
+                                </ul>
+                            <% } else { %>
+                                No comment!
+                            <% } %>
+                        </div>
+                    </div>
+                </div><!-- /.container -->
+            </div><!-- /.swiper-slide -->
+<% 
+/*var out = '';
+for (var i in post) {
+    out += i + ": " + post[i] + "\n";
+}
+console.log('*************');
+console.log(out);
+console.log('*************');
+console.log( 'section data: '+post );*/
+%>
+		<% }); %>
+        
+</div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>

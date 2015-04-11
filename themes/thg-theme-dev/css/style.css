@@ -1,0 +1,246 @@
+/*
+Theme Name: THG Curator
+*/
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+body {
+	font-family: 'Open Sans', sans-serif;
+	padding-top: 50px;
+    background-image: url('../img/ipadLandscape_bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center; 
+}
+.navbar {
+	text-align:center;
+}
+.navbar-toggle {
+	position:absolute;
+	left:10px;
+	background-color: #DEDEDE;
+	float:none;
+	margin-right:0;
+}
+.icon-bar{
+	background-color: #000;
+}
+.navbar-home {
+	font-size:21px;
+	position: absolute;
+	top: 10px;
+	left: 72px;
+}
+.navbar-home:hover {
+	text-decoration:none;
+}
+.navbar-favs {
+	font-size:21px;
+	position: absolute;
+	top: 10px;
+	left: 110px;
+}
+#fontSizeAdjust {
+	font-size:21px;
+	position: absolute;
+	top: 10px;
+	left: 140px;
+}
+.navbar-share {
+	font-size:21px;
+	position: absolute;
+	top: 10px;
+	left: 175px;
+}
+.navbar-brand {
+	float:none;
+	display:inline-block;
+	padding:5px 0 0;
+}
+.navbar-filter {
+	display:none;
+	margin: 8px 10px 0 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+#sidr{
+	top:50px;
+}
+#buttons
+{
+	display:none;	
+}
+#app-menu ul li a{
+	padding-left:30px;
+	background:url(../img/unchecked.gif) no-repeat 8px 17px transparent;	
+}
+#app-menu ul li a.checked{
+	padding-left:30px;
+	background:url(../img/checked.gif) no-repeat 8px 17px transparent;	
+}
+#categories {
+	display:none;
+	position: absolute;
+	top: 50px;
+	left: 10px;
+	background-color: rgba(0,0,0,0.75);
+	border-radius: 8px;
+	padding: 0 20px;
+}
+#categories ul{
+	list-style: none;
+  	margin: 0;
+  	padding: 0;
+}
+#categories li a{
+	display:block;
+	font-weight: bold;
+	color: #fff;
+	font-size: 16px;
+	padding:0 16px;
+	text-align:left;
+	height:42px;
+	line-height:42px;
+	border-top:1px solid #DDD;
+}
+#categories li:first-child a{
+	border-top:none;
+}
+#arrow{
+	position:absolute;
+	top:-6px;
+	left:18px;
+}
+.image_banner>img,
+.summary img{
+	width:100%;
+	height:auto;	
+}
+.date,
+.category_name{
+	padding:10px 0 5px;
+	display:inline-block;
+}
+.category_name{
+	font-weight:bold;
+}
+.copy h1{
+	margin:0;	
+}
+.copy .source{
+	font-style:italic;
+	color:#7C7C7C;
+}
+.copy p,
+.copy li{
+	padding-top:10px;
+}
+.copy.small{
+	font-size:14px;	
+}
+.copy.medium{
+	font-size:16px;	
+}
+.copy.large{
+	font-size:18px;	
+}
+.print_btn{
+	display:inline-block;
+	padding:10px 20px;
+	color:#FFFFFF;
+	border:1px solid #333333;
+	border-radius:3px;
+	background: #5f8d9d; /* Old browsers */
+	background: -moz-linear-gradient(top,  #5f8d9d 0%, #4e7d8d 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5f8d9d), color-stop(100%,#4e7d8d)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #5f8d9d 0%,#4e7d8d 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #5f8d9d 0%,#4e7d8d 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #5f8d9d 0%,#4e7d8d 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #5f8d9d 0%,#4e7d8d 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5f8d9d', endColorstr='#4e7d8d',GradientType=0 ); /* IE6-9 */
+}
+.summaries{
+	margin-top:10px;
+}
+.summary{
+	display:block;
+	background-color:#e1e1e1;
+	border:1px solid #333333;
+	border-radius:3px;
+}
+.summary h4{
+	color:#282828;
+	margin:10px 10px 0;
+}
+.summary .date{
+	margin-left:10px;
+	color:#797979;
+	font-weight:bold;
+}
+.summary .category_name{
+	float:right;
+	margin-right:10px;
+}
+
+
+
+.swiper-container {
+	width: 100%;
+	height: 100%;
+}
+.swiper-slide {
+	/* Center slide text vertically */
+	/*display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;*/
+}
+.swiper-button-next, .swiper-button-prev {
+  position: fixed;
+}
+.comment_author,
+.comment_date,
+.comment_content{
+	margin:0;
+	padding:0;
+}
+.comment_author{
+	margin-top:10px;
+	color:#333;
+	font-weight:bold;
+	font-size:21px;
+}
+.comment_date{
+	font-weight:bold;
+}
+
+/*andrew additions */
+form#login-form {
+  padding: 10%;
+}
+/* end andrew additions */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	.navbar-toggle {
+		display: block;
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}

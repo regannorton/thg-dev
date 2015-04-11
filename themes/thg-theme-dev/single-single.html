@@ -1,0 +1,44 @@
+<div class="image_banner">
+    <% if( post.thumbnail.src && post.thumbnail.src.length ){ %>
+        <img width="2048" height="443" src="http://localhost<%= post.thumbnail.src %>" class="attachment-post-thumbnail wp-post-image" alt="sample" title="" style="">
+    <% } else { %>
+        <img width="2048" height="443" src="http://localhost/wp-content/uploads/2015/02/sample-2048x443.jpg" class="attachment-post-thumbnail wp-post-image" alt="sample" title="" style="">	
+    <% } %>
+</div>
+<div class="container copy">
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="date"><%= TemplateTags.formatDate(post.date,'d/m/Y') %></div>
+        </div>
+        <div class="col-xs-6 text-right">
+            <span class="category_name"><%= post.categories %></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h1><%= post.title %></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <span class="source"><%= post.thg_curator_article_source %></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <%= post.content %>
+            <a href="<%= TemplateTags.getNextPage() %>">NEXT</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-right">
+            <a href="#" class="print_btn">Print</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+    COMMENTS
+        </div>
+    </div>
+</div><!-- /.container -->
+<% console.log('My posts : ', section_data) %>

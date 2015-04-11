@@ -1,0 +1,40 @@
+<div class="container copy">
+	<% post_data = posts; %>
+    <% console.log('posts: ',posts); %>
+	<% var counter=0; %>
+    <% section_data=[]; %>
+    <% if( posts.length ){ %>
+    	<% _.each( posts, function( post ){ %>
+        	<% section_data.push(post); %>
+        	<% if( counter==0||counter%2==0){ %>
+            <div class="row summaries">
+            <% } %>
+            
+                <div class="col-xs-6">
+                    <div class="summary" data-categories="<%=post.cat_data%>">
+                        <a href="<%=TemplateTags.getPostLink(post.id)%>" data-index="<%=counter%>">
+                        <% if( post.thumbnail.src && post.thumbnail.src.length ){ %>
+                            <%=post.thumb_custom%>
+                        <% } else { %>
+                            <img src="http://thg.hfnelson.com/wp-content/uploads/2015/02/sample-2048x443.jpg" width="2048" height="443" class="attachment-post-thumbnail wp-post-image lazy" alt="sample" title="" style="">
+                        <% } %>
+                        </a>
+                        <h4>
+                            <a href="<%=TemplateTags.getPostLink(post.id)%>" data-index="<%=counter%>">
+                            <%=post.title%>
+                            </a>
+                        </h4>
+                        <span class="date"><%=TemplateTags.formatDate(post.date,'m/d/Y')%></span> <span class="category_name"><%=post.categories%></span>
+                        <div class="clearfix"></div>
+                    </div><!-- /.summary -->
+                </div>
+            
+            <% if( counter%2!=0){ %>
+        	</div><!-- /.summaries -->
+        	<% } %>
+            <% counter++; %>
+        <% }); %><!--/each posts-->
+    <% }else{ %><!--/posts.length-->
+          <p>No post found!</p>
+    <% } %>
+</div><!-- /.container -->
